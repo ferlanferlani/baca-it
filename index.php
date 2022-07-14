@@ -171,7 +171,7 @@ http://www.templatemo.com/tm-492-app-starter
                 Web Belajar coding Gratis tanpa embel embel pembayaran
               </p>
               <a
-                href="login.html"
+                href="register"
                 class="wow fadeInUp section-btn btn btn-success smoothScroll"
                 data-wow-delay="1s"
                 >DAFTAR</a
