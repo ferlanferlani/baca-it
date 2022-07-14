@@ -1,3 +1,25 @@
+<?php 
+  require 'functions.php';
+
+    if( isset($_POST['upload']) ) {
+          if( tambah($_POST) > 0) {
+            echo "
+              <script>
+              alert('Berhasil upload');
+              document.location.href = 'app-upload.php';
+              </script>";
+          }else {
+            "
+              <script>
+              alert('Gagal upload');
+              document.location.href = 'app-upload.php';
+              </script>";
+          }
+        }
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -293,6 +315,7 @@
       <!--**********************************
             Content body start
         ***********************************-->
+
       <div class="content-body">
         <div class="container-fluid mt-3">
           <div class="row justify-content-center">
@@ -302,7 +325,7 @@
                   <h4 class="card-title">Upload E-book</h4>
                   <div class="row justify-content-center">
                     <div class="col-sm">
-                      <form action="" method="">
+                      <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group row">
                           <label
                             class="col-lg-4 col-form-label"
@@ -314,8 +337,17 @@
                               type="text"
                               class="form-control"
                               placeholder="Masukkan Judul E-book.."
+                              name="judul"
                               required
                             />
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="deskripsi" class="col-lg-4 col-form-label">
+                            Deskripsi E-book
+                          </label>
+                          <div class="input-group mb-3 col-lg-6">
+                            <textarea class="form-control" id="deskripsi" rows="3" placeholder="Deskripsi E-book..." name="deskripsi"></textarea>
                           </div>
                         </div>
                         <div class="form-group row">
@@ -329,6 +361,7 @@
                               <input
                                 type="file"
                                 class="custom-file-input"
+                                name="pdf"
                                 required
                               />
                               <label class="custom-file-label"
@@ -338,7 +371,7 @@
                           </div>
                         </div>
                         <div class="input-grup">
-                          <button type="submit" class="btn btn-primary">
+                          <button type="submit" class="btn btn-primary" name="upload">
                             Submit
                           </button>
                         </div>

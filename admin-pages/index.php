@@ -1,3 +1,11 @@
+<?php 
+  require 'functions.php';
+  $totalEbook = count(query("SELECT * FROM ebook"));
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -301,7 +309,7 @@
                 <div class="card-body">
                   <h3 class="card-title text-white">Jumlah E-book</h3>
                   <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
+                    <h2 class="text-white"><?= $totalEbook; ?></h2>
                   </div>
                   <span class="float-right display-5 opacity-5"
                     ><i class="fa fa-book"></i
