@@ -18,8 +18,94 @@
       rel="stylesheet"
       href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
     />
+    <!-- data table css -->
+    <link
+      href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- start link favicon -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="../favicon/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="../favicon/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="../favicon/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="../favicon/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="60x60"
+      href="../favicon/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="120x120"
+      href="../favicon/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="76x76"
+      href="../favicon/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="../favicon/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon-196x196.png"
+      sizes="196x196"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-128.png"
+      sizes="128x128"
+    />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <!-- end link favicon -->
   </head>
 
   <body>
@@ -215,56 +301,32 @@
         ***********************************-->
       <div class="content-body">
         <div class="container-fluid mt-3">
-          <div class="row justify-content-center">
-            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-8">
+          <div class="row">
+            <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Upload E-book</h4>
-                  <div class="row justify-content-center">
-                    <div class="col-sm">
-                      <form action="" method="">
-                        <div class="form-group row">
-                          <label
-                            class="col-lg-4 col-form-label"
-                            for="val-username"
-                            >Judul E-book
-                          </label>
-                          <div class="input-group mb-3 col-lg-6">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Masukkan Judul E-book.."
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label
-                            class="col-lg-4 col-form-label"
-                            for="val-username"
-                            >PDF
-                          </label>
-                          <div class="input-group mb-3 col-lg-6">
-                            <div class="custom-file">
-                              <input
-                                type="file"
-                                class="custom-file-input"
-                                required
-                              />
-                              <label class="custom-file-label"
-                                >Choose file</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div class="input-grup">
-                          <button type="submit" class="btn btn-primary">
-                            Submit
-                          </button>
-                        </div>
-                      </form>
-                      <!-- akhir bagian form -->
-                    </div>
+                  <h4 class="card-title">Daftar E-book</h4>
+                  <div class="table-responsive">
+                    <table
+                      class="table table-striped table-bordered zero-configuration"
+                    >
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Judul E-book</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>1</th>
+                          <td>Cara Menjadi Hacker Secara Instant</td>
+                          <td>
+                            <a href="#" class="badge badge-danger">Delete</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -324,5 +386,10 @@
     <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
 
     <script src="./js/dashboard/dashboard-1.js"></script>
+
+    <!-- data tables plugins -->
+    <script src="./plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
   </body>
 </html>
