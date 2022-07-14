@@ -134,7 +134,7 @@
         ***********************************-->
       <div class="nav-header">
         <div class="brand-logo">
-          <a href="index.html">
+          <a href="indee">
             <b class="logo-abbr"
               ><img src="logo/it-logo-6882B7887A-seeklogo.com.png" alt="" />
             </b>
@@ -230,13 +230,13 @@
                   <div class="dropdown-content-body">
                     <ul>
                       <li>
-                        <a href="app-profile.html"
+                        <a href="app-profile"
                           ><i class="icon-user"></i> <span>Profile</span></a
                         >
                       </li>
                       <hr class="my-2" />
                       <li>
-                        <a href="page-login.html"
+                        <a href="logout"
                           ><i class="icon-key"></i> <span>Logout</span></a
                         >
                       </li>
@@ -260,25 +260,25 @@
           <ul class="metismenu" id="menu">
             <li class="nav-label">Menu</li>
             <li>
-              <a href="index.html" aria-expanded="false">
+              <a href="." aria-expanded="false">
                 <i class="icon-speedometer menu-icon"></i
                 ><span class="nav-text">Dashboard</span>
               </a>
             </li>
             <li>
-              <a href="app-upload.html" aria-expanded="false">
+              <a href="app-upload" aria-expanded="false">
                 <i class="icon-badge menu-icon"></i
                 ><span class="nav-text">Upload E-book</span>
               </a>
             </li>
             <li>
-              <a href="daftar-ebook.html" aria-expanded="false">
+              <a href="daftar-ebook" aria-expanded="false">
                 <i class="icon-badge menu-icon"></i
                 ><span class="nav-text">Daftar E-book</span>
               </a>
             </li>
             <li>
-              <a href="widgets.html" aria-expanded="false">
+              <a href="#" aria-expanded="false">
                 <i class="icon-badge menu-icon"></i
                 ><span class="nav-text">Daftar Request E-book</span>
               </a>
