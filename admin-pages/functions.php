@@ -33,7 +33,7 @@ function tambah($data) {
     $judul = htmlspecialchars($data["judul"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $pdf = uploadpdf();
-    $img = uploadimg();
+    $img = uploadcover();
     if(!$pdf && !img) {
         return false;
     }
@@ -92,8 +92,8 @@ function uploadpdf() {
 
 }
 
-
-function uploadimg() {
+// upload cover
+function uploadcover() {
 	$namaFile = $_FILES['cover']['name'];
 	$ukuranFile = $_FILES['cover']['size'];
 	$error = $_FILES['cover']['error'];
@@ -129,7 +129,7 @@ function uploadimg() {
 	$namaFileBaru .= ".";
 	$namaFileBaru .= $ektensiGambar;
 
-	move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+	move_uploaded_file($tmpName, 'cover/' . $namaFileBaru);
 	return$namaFileBaru;
 
 

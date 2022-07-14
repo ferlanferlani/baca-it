@@ -6,13 +6,13 @@
             echo "
               <script>
               alert('Berhasil upload');
-              document.location.href = 'app-upload.php';
+              document.location.href = 'app-upload';
               </script>";
           }else {
             "
               <script>
               alert('Gagal upload');
-              document.location.href = 'app-upload.php';
+              document.location.href = 'app-upload';
               </script>";
           }
         }
@@ -350,7 +350,7 @@
                           <label
                             class="col-lg-4 col-form-label"
                             for="val-username"
-                            >COVER
+                            >Cover
                           </label>
                           <div class="input-group mb-3 col-lg-6">
                             <div class="custom-file">
@@ -370,7 +370,7 @@
                           <label
                             class="col-lg-4 col-form-label"
                             for="val-username"
-                            >Judul E-book
+                            >Judul
                           </label>
                           <div class="input-group mb-3 col-lg-6">
                             <input
@@ -384,7 +384,7 @@
                         </div>
                         <div class="form-group row">
                           <label for="deskripsi" class="col-lg-4 col-form-label">
-                            Deskripsi E-book
+                            Deskripsi
                           </label>
                           <div class="input-group mb-3 col-lg-6">
                             <textarea class="form-control" id="deskripsi" rows="3" placeholder="Deskripsi E-book..." name="deskripsi"></textarea>
