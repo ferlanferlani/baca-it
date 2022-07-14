@@ -32,12 +32,13 @@ function tambah($data) {
     global $conn;
     $judul = htmlspecialchars($data["judul"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
-    $pdf = upload();
-    if(!$pdf) {
+    $pdf = uploadpdf();
+    $img = uploadimg();
+    if(!$pdf && !img) {
         return false;
     }
 
-$query = "INSERT INTO ebook VALUES ('', '$judul', '$deskripsi', '$pdf')";
+$query = "INSERT INTO ebook VALUES ('', '$judul', '$deskripsi', '$pdf', '$img')";
 
 mysqli_query($conn, $query);
 
@@ -48,7 +49,7 @@ return mysqli_affected_rows($conn);
 
 // upload pdf
 
-function upload() {
+function uploadpdf() {
     $namaFile = $_FILES['pdf']['name'];
     $ukuranFile = $_FILES['pdf']['size'];
     $error = $_FILES['pdf']['error'];
@@ -86,6 +87,50 @@ function upload() {
 
     move_uploaded_file($tmpName, 'pdf/' . $namaFileBaru);
     return$namaFileBaru;
+
+
+
+}
+
+
+function uploadimg() {
+	$namaFile = $_FILES['cover']['name'];
+	$ukuranFile = $_FILES['cover']['size'];
+	$error = $_FILES['cover']['error'];
+	$tmpName = $_FILES['cover']['tmp_name'];
+
+	if( $error === 4) {
+		echo"<script>
+				alert('pilih gambar terlebih dahulu');
+		</script>";
+	return false;
+	}
+
+	$ektensiGambarValid = ['jpg', 'jpeg', 'png' ];
+	$ektensiGambar = strtolower(end($ektensiGambarValid));
+
+	if(!in_array($ektensiGambar, $ektensiGambarValid) ) {
+		echo "<script>
+			alert('yang kamu upload bukan gambar!');
+		</script>";
+		return false;
+	}
+
+
+	if ( $ukuranFile > 1000000 ) {
+		echo "<script>
+			alert('ukuran gambar terlalu besar');
+		</script>";
+		return false;
+	}
+
+
+	$namaFileBaru = uniqid();
+	$namaFileBaru .= ".";
+	$namaFileBaru .= $ektensiGambar;
+
+	move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+	return$namaFileBaru;
 
 
 

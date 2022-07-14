@@ -326,6 +326,46 @@
                   <div class="row justify-content-center">
                     <div class="col-sm">
                       <form action="" method="post" enctype="multipart/form-data">
+                      <div class="form-group row">
+                          <label
+                            class="col-lg-4 col-form-label"
+                            for="val-username"
+                            >PDF
+                          </label>
+                          <div class="input-group mb-3 col-lg-6">
+                            <div class="custom-file">
+                              <input
+                                type="file"
+                                class="custom-file-input"
+                                name="pdf"
+                                required
+                              />
+                              <label class="custom-file-label"
+                                >Upload Pdf</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label
+                            class="col-lg-4 col-form-label"
+                            for="val-username"
+                            >COVER
+                          </label>
+                          <div class="input-group mb-3 col-lg-6">
+                            <div class="custom-file">
+                              <input
+                                type="file"
+                                class="custom-file-input"
+                                name="cover"
+                                required
+                              />
+                              <label class="custom-file-label"
+                                >Upload Cover</label
+                              >
+                            </div>
+                          </div>
+                        </div>
                         <div class="form-group row">
                           <label
                             class="col-lg-4 col-form-label"
@@ -348,26 +388,6 @@
                           </label>
                           <div class="input-group mb-3 col-lg-6">
                             <textarea class="form-control" id="deskripsi" rows="3" placeholder="Deskripsi E-book..." name="deskripsi"></textarea>
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label
-                            class="col-lg-4 col-form-label"
-                            for="val-username"
-                            >PDF
-                          </label>
-                          <div class="input-group mb-3 col-lg-6">
-                            <div class="custom-file">
-                              <input
-                                type="file"
-                                class="custom-file-input"
-                                name="pdf"
-                                required
-                              />
-                              <label class="custom-file-label"
-                                >Choose file</label
-                              >
-                            </div>
                           </div>
                         </div>
                         <div class="input-grup">
