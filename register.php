@@ -1,6 +1,25 @@
 <?php
 require 'admin-pages/functions.php';
+
+
+
+// logic register admin
+if(isset($_POST ['submit']) > 0) {
+
+  echo"<script>
+        alert('akun anda berhasil dibuat!');
+        document.location.href = 'lokasi file yang dituju';
+       </script>";
+} else {
+  echo mysqli_error($conn);
+}
+
+
+
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -125,17 +144,17 @@ require 'admin-pages/functions.php';
                                 <div class="text-center">
                                     <img src="admin-pages/logo/bacait text.png" alt="BacaIT">
                                 </div>
-                                <form class="mt-5 login-input">
+                                <form action="" method="post" class="mt-5 login-input">
                                     <div class="form-group">
-                                        <input type="text" class="form-control"  placeholder="Username" required>
+                                        <input type="text" class="form-control" name="username"  placeholder="Username" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  placeholder="Password" required>
+                                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Konfirmasi Password" required>
+                                        <input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password" required>
                                     </div>
-                                    <button class="btn login-form__btn submit w-100">Register</button>
+                                    <input type="submit" name="submit" class="btn login-form__btn submit w-100">Register</input>
                                 </form>
                                 </div>
                             </div>
