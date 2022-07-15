@@ -8,7 +8,7 @@ $db = "baca-it";
 
 $conn = mysqli_connect($host, $username, $password, $db);
 
-// query
+// query database
 function query($query) {
     global $conn;
     $result = mysqli_query($conn, $query);
@@ -131,6 +131,9 @@ function uploadcover() {
 
 	move_uploaded_file($tmpName, 'cover/' . $namaFileBaru);
 	return$namaFileBaru;
+
+
+    //function registration 
 
 
 
