@@ -34,7 +34,7 @@ function tambah($data) {
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $pdf = uploadpdf();
     $img = uploadcover();
-    if(!$pdf && !img) {
+    if(!$pdf && !$img) {
         return false;
     }
 
