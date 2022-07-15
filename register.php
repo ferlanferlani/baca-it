@@ -1,3 +1,7 @@
+<?php
+require 'admin-pages/functions.php';
+?>
+
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
