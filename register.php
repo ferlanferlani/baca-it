@@ -193,6 +193,7 @@ if( isset($_POST["submit"]) ) {
                                         <input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password" required>
                                     </div>
                                     <button type="submit" class="btn login-form__btn submit w-100" name="submit" >Register</button>
+                                    <a href="login">login</a>
                                 </form>
                                 </div>
                             </div>
