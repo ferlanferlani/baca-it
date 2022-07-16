@@ -3,9 +3,14 @@
 // muali session
 session_start();
 if (isset($_SESSION["login"])) {
-  header("Location: admin-pages/.");
+  header("Location: admin-pages/");
   exit;
 }
+
+// if (!isset($_SESSION["login"])) {
+//   header("Location: admin-pages/");
+//   exit;
+// }
 
 // if (isset($_SESSION["staff"])) {
 //   header("Location: staff/.");
