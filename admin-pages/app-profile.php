@@ -1,6 +1,7 @@
 <?php
 
 require 'functions.php';
+
 // mulai session
 session_start();
 if (!isset($_SESSION["admin"])) {

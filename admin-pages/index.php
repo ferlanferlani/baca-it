@@ -10,6 +10,7 @@ if (!isset($_SESSION["admin"])) {
 }
 
   $totalEbook = count(query("SELECT * FROM ebook"));
+  $totalAdmin = count(query("SELECT * FROM admin"));
 
   // <!-- cetak session login -->
   if ($_SESSION['admin']) {
@@ -118,6 +119,11 @@ if (!isset($_SESSION["admin"])) {
       href="../favicon/favicon-128.png"
       sizes="128x128"
     />
+
+    <!-- panggil font awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- akhir font awesome -->
+
     <meta name="application-name" content="&nbsp;" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
@@ -277,7 +283,7 @@ if (!isset($_SESSION["admin"])) {
                       <hr class="my-2" />
                       <li>
                         <a href="logout"
-                          ><i class="icon-key"></i> <span>Logout</span></a
+                          ><i class="icon-logout"></i> <span>Logout</span></a
                         >
                       </li>
                     </ul>
@@ -339,7 +345,7 @@ if (!isset($_SESSION["admin"])) {
             <div class="col-lg-3 col-sm-6">
               <div class="card gradient-1">
                 <div class="card-body">
-                  <h3 class="card-title text-white">Jumlah E-book</h3>
+                  <h3 class="card-title text-white">Jumlah Ebook</h3>
                   <div class="d-inline-block">
                     <h2 class="text-white"><?= $totalEbook; ?></h2>
                   </div>
@@ -352,25 +358,24 @@ if (!isset($_SESSION["admin"])) {
             <div class="col-lg-3 col-sm-6">
               <div class="card gradient-2">
                 <div class="card-body">
-                  <h3 class="card-title text-white">Request E-book</h3>
+                  <h3 class="card-title text-white">Request Ebook</h3>
                   <div class="d-inline-block">
                     <h2 class="text-white">8541</h2>
                   </div>
                   <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-money"></i
-                  ></span>
+                    ><i class="fa-solid fa-code-pull-request"></i></span>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6">
               <div class="card gradient-3">
                 <div class="card-body">
-                  <h3 class="card-title text-white">New Customers</h3>
+                  <h3 class="card-title text-white">Jumlah Pengguna</h3>
                   <div class="d-inline-block">
                     <h2 class="text-white">4565</h2>
                   </div>
                   <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-users"></i
+                    ><i class="fas fa-users"></i
                   ></span>
                 </div>
               </div>
@@ -378,12 +383,12 @@ if (!isset($_SESSION["admin"])) {
             <div class="col-lg-3 col-sm-6">
               <div class="card gradient-4">
                 <div class="card-body">
-                  <h3 class="card-title text-white">Customer Satisfaction</h3>
+                  <h3 class="card-title text-white">Admin</h3>
                   <div class="d-inline-block">
-                    <h2 class="text-white">99</h2>
+                    <h2 class="text-white"><?= $totalAdmin; ?></h2>
                   </div>
                   <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-heart"></i
+                    ><i class="fas fa-user-gear"></i
                   ></span>
                 </div>
               </div>
