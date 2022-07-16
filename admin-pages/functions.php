@@ -134,45 +134,45 @@ function uploadcover() {
 
 
     ////////////////// function registration /////////////////
-    function regisadmin($data) {
-        global $conn;
+    // function regisadmin($data) {
+    //     global $conn;
 
-        $username = stripslashes($data['username']);
-        $password = mysqli_real_escape_string(($conn, $data['password']));
-        $password2 = mysqli_real_escape_string($conn, $data['password2'])
-        $level = mysqli_real_escape_string($conn, $data['level']);
+    //     $username = stripslashes($data['username']);
+    //     $password = mysqli_real_escape_string(($conn, $data['password']));
+    //     $password2 = mysqli_real_escape_string($conn, $data['password2'])
+    //     $level = mysqli_real_escape_string($conn, $data['level']);
 
-        $admin = myqli_query($conn, "SELECT username from multi_user WHERE username = '$username' ");
+    //     $admin = myqli_query($conn, "SELECT username from multi_user WHERE username = '$username' ");
 
-        if(mysqli_fetch_assoc($admin)) {
-            echo "<script>
-                    alert('nama yang anda pilih sekaran sudah digunakan, pilih username lain!');
-                    document.location.href = 'halaman yang dituju'
-                  </script>"
+    //     if(mysqli_fetch_assoc($admin)) {
+    //         echo "<script>
+    //                 alert('nama yang anda pilih sekaran sudah digunakan, pilih username lain!');
+    //                 document.location.href = 'halaman yang dituju'
+    //               </script>"
 
-                  return false;
-        }
+    //               return false;
+    //     }
 
-        // cek kesamaan password
-        if($password !== $password2) {
-            echo "<script>
-            alert('password yang anda masukkan tidak sesuai!');
-            document.location.href = 'alamat yang dituju';
-                  </script>"
+    //     // cek kesamaan password
+    //     if($password !== $password2) {
+    //         echo "<script>
+    //         alert('password yang anda masukkan tidak sesuai!');
+    //         document.location.href = 'alamat yang dituju';
+    //               </script>"
 
-                  return false;
-        }
+    //               return false;
+    //     }
 
-        // enksripsi password
-        $password = password_hash($password, PASSWORD_DEFAULT);
+    //     // enksripsi password
+    //     $password = password_hash($password, PASSWORD_DEFAULT);
 
-        // masukkan data user/admin ke database
-        mysqli_query($conn, "INSERT INTO multi_user VALUES(NULL, '$username', '$password', '$level')");
-        mysqli_query($conn, "INSERT INTO admin VALUES(NULL, '$username', '$password', '$level')");
+    //     // masukkan data user/admin ke database
+    //     mysqli_query($conn, "INSERT INTO multi_user VALUES(NULL, '$username', '$password', '$level')");
+    //     mysqli_query($conn, "INSERT INTO admin VALUES(NULL, '$username', '$password', '$level')");
 
-        return mysqli_affected_rows($conn);
+    //     return mysqli_affected_rows($conn);
 
-    }
+    // }
 
 
 

@@ -2,20 +2,55 @@
 require 'admin-pages/functions.php';
 
 
+////////////////// function registration /////////////////
+function regisadmin($data) {
+  global $conn;
 
-// logic register admin
-if(isset($_POST ['submit']) > 0) {
+  $username = strtolower(stripslashes($data["username"]));
+  $password = mysqli_real_escape_string($conn, $data["password"]);
+  $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+  $level = mysqli_real_escape_string($conn, $data["level"]);
 
-  echo"<script>
-        alert('akun anda berhasil dibuat!');
-        document.location.href = 'lokasi file yang dituju';
-       </script>";
-} else {
-  echo mysqli_error($conn);
+
+  $admin = mysqli_query($conn, "SELECT username FROM multi_user WHERE username = '$username' ");
+
+  if( mysqli_fetch_assoc($admin) ) {
+
+    echo"username yang anda pilih sudah digunakan!";
+    return false;
+  }
+
+  // cek pasword
+  if( $password !== $password2) {
+
+    echo"password yang anda masukkan tidak sesuai!";
+    return false;
+  }
+
+  // enkripsi password
+  $password = password_hash($password, PASSWORD_DEFAULT);
+
+  // tambah user
+  mysqli_query($conn, "INSERT INTO multi_user VALUES(NULL, '$username', '$password', '$level')");
+
+  mysqli_query($conn, "INSERT admin VALUES(NULL, '$username', '$password')");
+
+  return mysqli_affected_rows($conn);
+
 }
 
 
 
+if( isset($_POST["submit"]) ) {
+
+  if( regisadmin($_POST) > 0 ) {
+
+    echo"akun anda berhasil dibuat!";
+  } else {
+    echo mysqli_error($conn);
+  }
+
+}
 
 
 ?>
@@ -146,6 +181,9 @@ if(isset($_POST ['submit']) > 0) {
                                 </div>
                                 <form action="" method="post" class="mt-5 login-input">
                                     <div class="form-group">
+                                        <input type="hidden" class="form-control" name="level"  placeholder="Level" value="admin">
+                                    </div>
+                                    <div class="form-group">
                                         <input type="text" class="form-control" name="username"  placeholder="Username" required>
                                     </div>
                                     <div class="form-group">
@@ -154,7 +192,7 @@ if(isset($_POST ['submit']) > 0) {
                                     <div class="form-group">
                                         <input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password" required>
                                     </div>
-                                    <input type="submit" name="submit" class="btn login-form__btn submit w-100">Register</input>
+                                    <button type="submit" class="btn login-form__btn submit w-100" name="submit" >Register</button>
                                 </form>
                                 </div>
                             </div>
@@ -176,6 +214,14 @@ if(isset($_POST ['submit']) > 0) {
     <script src="admin-pages/js/settings.js"></script>
     <script src="admin-pages/js/gleek.js"></script>
     <script src="admin-pages/js/styleSwitcher.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script>
+  $('.toast').toast('show');
+</script>
+
 </body>
 </html>
 

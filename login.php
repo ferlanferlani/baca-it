@@ -1,3 +1,64 @@
+<?php
+
+// mulai session
+session_start();
+
+if (isset($_SESSION['admin'])) {
+  header("Location: admin-pages/");
+  exit;
+}
+
+// panggil function
+require 'admin-pages/functions.php';
+
+$welcome = "<script>
+              alert('selamat datang!');
+            </script>";
+
+
+// logic login
+if (isset($_POST["login"])) {
+
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+
+  $result = mysqli_query($conn, "SELECT * FROM multi_user WHERE username = '$username'");
+
+  if (mysqli_num_rows($result) === 1 ) {
+
+    $row = mysqli_fetch_assoc($result);
+
+    if (password_verify($password, $row["password"])) {
+
+      if( $row['level'] == 'admin') {
+
+        // set session
+        $_SESSION['admin'] = $row['id']; 
+        $_SESSION["welcome"] = $welcome;
+        header("Location: admin-pages/.");
+
+        exit;
+
+      // } else if( $row['level'] == 'user') {
+      //    // set session
+      //   //  $_SESSION['users'] = $row['id'];
+      //   //  $_SESSION["tentang"] = $tentang; 
+      //   //  $_SESSION["welcome"] = $welcome;
+      //    header("Location: users-pages/.");
+      //    exit;
+      }
+    // }
+  }
+
+  }
+
+  $error = true;
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html class="h-100" lang="en">
   <head>
@@ -122,25 +183,30 @@
                   <div class="text-center">
                     <img src="admin-pages/logo/bacait text.png" alt="" />
                   </div>
-
-                  <form class="mt-5 login-input">
+                  <!-- jika password atau username salah -->
+                  <?php if (isset($error)) : ?>
+                    <i class="text-danger">GAGAL MASUK!</i>
+                  <?php endif; ?>
+                  <form action="" method="post" class="mt-5 login-input">
                     <div class="form-group">
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Username"
+                        name="username"
+                        placeholder="Username" required
                       />
                     </div>
                     <div class="form-group">
                       <input
                         type="password"
                         class="form-control"
+                        name="password"
                         placeholder="Password"
+                        required
                       />
                     </div>
-                    <button class="btn login-form__btn submit w-100">
-                      Login
-                    </button>
+                   <button type="submit" class="btn login-form__btn submit w-100" name="login" >Login</button>
+                    </input>
                   </form>
                 </div>
               </div>
