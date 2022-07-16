@@ -115,6 +115,12 @@ $ebook = query("SELECT * FROM ebook");
       href="../favicon/favicon-128.png"
       sizes="128x128"
     />
+
+    <!-- panggil font awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- akhir font awesome -->
+
+    
     <meta name="application-name" content="&nbsp;" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
@@ -260,7 +266,7 @@ $ebook = query("SELECT * FROM ebook");
                       <hr class="my-2" />
                       <li>
                         <a href="page-login"
-                          ><i class="icon-key"></i> <span>Logout</span></a
+                          ><i class="icon-logout"></i> <span>Logout</span></a
                         >
                       </li>
                     </ul>
@@ -278,7 +284,7 @@ $ebook = query("SELECT * FROM ebook");
       <!--**********************************
             Sidebar start
         ***********************************-->
-      <div class="nk-sidebar">
+        <div class="nk-sidebar">
         <div class="nk-nav-scroll">
           <ul class="metismenu" id="menu">
             <li class="nav-label">Menu</li>
@@ -290,20 +296,18 @@ $ebook = query("SELECT * FROM ebook");
             </li>
             <li>
               <a href="app-upload" aria-expanded="false">
-                <i class="icon-badge menu-icon"></i
-                ><span class="nav-text">Upload E-book</span>
+                <i class="fas fa-upload"></i
+                ><span class="nav-text">Upload Ebook</span>
               </a>
             </li>
             <li>
               <a href="daftar-ebook" aria-expanded="false">
-                <i class="icon-badge menu-icon"></i
-                ><span class="nav-text">Daftar E-book</span>
+              <i class="fa-solid fa-list"></i><span class="nav-text">Daftar Ebook</span>
               </a>
             </li>
             <li>
-              <a href="#" aria-expanded="false">
-                <i class="icon-badge menu-icon"></i
-                ><span class="nav-text">Daftar Request E-book</span>
+              <a href="widgets" aria-expanded="false">
+              <i class="fa-solid fa-code-pull-request"></i><span class="nav-text">Daftar Request Ebook</span>
               </a>
             </li>
           </ul>

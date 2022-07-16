@@ -301,7 +301,7 @@ if (!isset($_SESSION["admin"])) {
       <!--**********************************
             Sidebar start
         ***********************************-->
-      <div class="nk-sidebar">
+        <div class="nk-sidebar">
         <div class="nk-nav-scroll">
           <ul class="metismenu" id="menu">
             <li class="nav-label">Menu</li>
@@ -313,20 +313,18 @@ if (!isset($_SESSION["admin"])) {
             </li>
             <li>
               <a href="app-upload" aria-expanded="false">
-                <i class="icon-badge menu-icon"></i
-                ><span class="nav-text">Upload E-book</span>
+                <i class="fas fa-upload"></i
+                ><span class="nav-text">Upload Ebook</span>
               </a>
             </li>
             <li>
               <a href="daftar-ebook" aria-expanded="false">
-                <i class="icon-badge menu-icon"></i
-                ><span class="nav-text">Daftar E-book</span>
+              <i class="fa-solid fa-list"></i><span class="nav-text">Daftar Ebook</span>
               </a>
             </li>
             <li>
-              <a href="#" aria-expanded="false">
-                <i class="icon-badge menu-icon"></i
-                ><span class="nav-text">Daftar Request E-book</span>
+              <a href="widgets" aria-expanded="false">
+              <i class="fa-solid fa-code-pull-request"></i><span class="nav-text">Daftar Request Ebook</span>
               </a>
             </li>
           </ul>
@@ -352,6 +350,8 @@ if (!isset($_SESSION["admin"])) {
                   <span class="float-right display-5 opacity-5"
                     ><i class="fa fa-book"></i
                   ></span>
+                  <br>
+                  <a href=""><div class="btn btn-primary btn-sm mt-4">Detail</div></a>
                 </div>
               </div>
             </div>
@@ -364,6 +364,8 @@ if (!isset($_SESSION["admin"])) {
                   </div>
                   <span class="float-right display-5 opacity-5"
                     ><i class="fa-solid fa-code-pull-request"></i></span>
+                    <br>
+                  <a href=""><div class="btn btn-danger btn-sm mt-4">Detail</div></a>
                 </div>
               </div>
             </div>
@@ -377,6 +379,8 @@ if (!isset($_SESSION["admin"])) {
                   <span class="float-right display-5 opacity-5"
                     ><i class="fas fa-users"></i
                   ></span>
+                  <br>
+                  <a href=""><div class="btn btn-warning btn-sm mt-4">Detail</div></a>
                 </div>
               </div>
             </div>
@@ -390,6 +394,8 @@ if (!isset($_SESSION["admin"])) {
                   <span class="float-right display-5 opacity-5"
                     ><i class="fas fa-user-gear"></i
                   ></span>
+                  <br>
+                  <a href=""><div class="btn btn-info btn-sm mt-4">Detail</div></a>
                 </div>
               </div>
             </div>
