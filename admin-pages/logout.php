@@ -5,6 +5,6 @@ $_SESSION = [];
 session_destroy();
 session_unset();
 
-header("Location: ./login");
+header("Location: ../login");
 exit;
 ?>
