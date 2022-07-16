@@ -1,5 +1,7 @@
 <?php 
 
+require 'functions.php';
+
 // mulai session
 session_start();
 if (!isset($_SESSION["admin"])) {
@@ -7,9 +9,16 @@ if (!isset($_SESSION["admin"])) {
     exit;
 }
 
-
-  require 'functions.php';
   $totalEbook = count(query("SELECT * FROM ebook"));
+
+  // <!-- cetak session login -->
+  if ($_SESSION['admin']) {
+    $login = $_SESSION['admin'];
+
+    $result = mysqli_query($conn, "SELECT * FROM multi_user WHERE id = '$login'");
+    $data = mysqli_fetch_assoc($result);
+  } 
+  // akhir cetak session Login
 
 
  ?>
@@ -122,24 +131,10 @@ if (!isset($_SESSION["admin"])) {
   <body>
 
 
-
-  <!-- test session welcome -->
-  <?php if ($_SESSION['admin']) {
-    $login = $_SESSION['admin'];
-
-    $result = mysqli_query($conn, "SELECT * FROM multi_user WHERE id = '$login'");
-    $data = mysqli_fetch_assoc($result);
-
-    
-  } 
-  ?>
-  <!-- akhir test session welcome -->
-
-
   <!-- modal welcome sederhana -->
   <?php if (isset($_SESSION['welcome'])) : ?>
     <script>
-      alert('berhasil login!');
+      alert(' Berhasil Login!');
     </script>
     <?php endif; 
     unset($_SESSION["welcome"] );

@@ -1,4 +1,13 @@
 <?php 
+
+// mulai session
+session_start();
+if (!isset($_SESSION["admin"])) {
+    header("Location: ../.");
+    exit;
+}
+
+
 require 'functions.php';
 $ebook = query("SELECT * FROM ebook");
 

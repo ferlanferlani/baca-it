@@ -11,9 +11,7 @@ if (isset($_SESSION['admin'])) {
 // panggil function
 require 'admin-pages/functions.php';
 
-$welcome = "<script>
-              alert('selamat datang!');
-            </script>";
+$welcome = '';
 
 
 // logic login

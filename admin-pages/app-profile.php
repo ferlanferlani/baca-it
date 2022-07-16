@@ -1,3 +1,26 @@
+<?php
+
+require 'functions.php';
+// mulai session
+session_start();
+if (!isset($_SESSION["admin"])) {
+    header("Location: ../.");
+    exit;
+}
+
+// <!-- cetak session login -->
+   if ($_SESSION['admin']) {
+    $login = $_SESSION['admin'];
+
+    $result = mysqli_query($conn, "SELECT * FROM multi_user WHERE id = '$login'");
+    $data = mysqli_fetch_assoc($result);
+  } 
+  // akhir cetak session Login
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -236,7 +259,7 @@
                       </li>
                       <hr class="my-2" />
                       <li>
-                        <a href="page-login"
+                        <a href="logout"
                           ><i class="icon-key"></i> <span>Logout</span></a
                         >
                       </li>
@@ -310,7 +333,7 @@
                           class="rounded-circle"
                         />
                       </div>
-                      <h4 class="mt-2 text-center">Ferlan Ferlani</h4>
+                      <h4 class="mt-2 text-center"><?= $data['username']; ?></h4>
                       <hr />
                       <h5 class="mb-3">Admin Account Settings</h5>
                       <!-- bagian form -->
@@ -327,7 +350,7 @@
                               class="form-control"
                               id="val-username"
                               name="val-username"
-                              placeholder="Enter a username.."
+                              value="<?= $data['username']; ?>"
                             />
                           </div>
                         </div>
@@ -343,7 +366,7 @@
                               class="form-control"
                               id="val-username"
                               name="val-username"
-                              placeholder="Enter a username.."
+                              placeholder="Ganti Password"
                             />
                           </div>
                         </div>
@@ -357,14 +380,18 @@
                             <div class="custom-file">
                               <input type="file" class="custom-file-input" />
                               <label class="custom-file-label"
-                                >Choose file</label
+                                >Pilih Gambar</label
                               >
                             </div>
                           </div>
+                          <small class="input-group mb-3 col-lg-6" style="font-style: italic;">*rekomendasi gambar dengan ukuran persegi</small>
                         </div>
                         <div class="input-grup">
+                          <a href=""><button type="submit" class="btn btn-danger">
+                            Hapus Akun
+                          </button></a>
                           <button type="submit" class="btn btn-primary">
-                            Submit
+                            Simpan
                           </button>
                         </div>
                       </form>
