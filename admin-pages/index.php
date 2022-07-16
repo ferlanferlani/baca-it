@@ -1,4 +1,13 @@
 <?php 
+
+// mulai session
+session_start();
+if (!isset($_SESSION["admin"])) {
+    header("Location: ../.");
+    exit;
+}
+
+
   require 'functions.php';
   $totalEbook = count(query("SELECT * FROM ebook"));
 
@@ -111,6 +120,34 @@
   </head>
 
   <body>
+
+
+
+  <!-- test session welcome -->
+  <?php if ($_SESSION['admin']) {
+    $login = $_SESSION['admin'];
+
+    $result = mysqli_query($conn, "SELECT * FROM multi_user WHERE id = '$login'");
+    $data = mysqli_fetch_assoc($result);
+
+    
+  } 
+  ?>
+  <!-- akhir test session welcome -->
+
+
+  <!-- modal welcome sederhana -->
+  <?php if (isset($_SESSION['welcome'])) : ?>
+    <script>
+      alert('berhasil login!');
+    </script>
+    <?php endif; 
+    unset($_SESSION["welcome"] );
+    ?>
+  <!-- akhir modal welcome sederhana -->
+
+
+
     <!--*******************
         Preloader start
     ********************-->
@@ -244,7 +281,7 @@
                       </li>
                       <hr class="my-2" />
                       <li>
-                        <a href="page-login"
+                        <a href="logout"
                           ><i class="icon-key"></i> <span>Logout</span></a
                         >
                       </li>
