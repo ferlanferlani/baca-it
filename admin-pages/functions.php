@@ -34,7 +34,11 @@ function tambah($data) {
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $pdf = uploadpdf();
     $img = uploadcover();
-    if(!$pdf && !$img) {
+    if(!$pdf) {
+        return false;
+    }
+
+    if (!$img) {
         return false;
     }
 
@@ -131,7 +135,7 @@ function uploadcover() {
 
 	move_uploaded_file($tmpName, 'cover/' . $namaFileBaru);
 	return$namaFileBaru;
-
+}
 
     ////////////////// function registration /////////////////
     // function regisadmin($data) {
@@ -176,6 +180,5 @@ function uploadcover() {
 
 
 
-}
 
 ?>
