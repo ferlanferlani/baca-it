@@ -53,20 +53,18 @@ if (isset($_POST["login"])) {
   $error = true;
 }
 
-
-
 ?>
 
 
-<!-- jika password atau username salah dan form kosong -->
-<?php if (isset($error)) {
+                <!-- jika password atau username salah dan form kosong -->
+                <?php if (isset($error)) {
                     echo "<script>
                     setTimeout(function () {
                       Swal.fire ({
                         title: 'Ooops!',
                         text: 'pastikan password dan username Anda terisi dengan benar',
                         icon: 'warning',
-                        timer: '3200',
+                        timer: '3200'
                     });
                   },10);
                   </script>

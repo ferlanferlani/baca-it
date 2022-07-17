@@ -25,6 +25,24 @@ if (!isset($_SESSION["admin"])) {
  ?>
 
 
+
+<?php if (isset($_SESSION['welcome'])) {
+  echo "<script>
+          setTimeout(function () {
+            Swal.fire ({
+              title: 'Ooops!',
+              text: 'pastikan password dan username Anda terisi dengan benar',
+              icon: 'warning',
+              timer: '3200'
+          });
+        },10);
+        </script>
+        ";
+
+  unset($_SESSION['welcome']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -135,37 +153,6 @@ if (!isset($_SESSION["admin"])) {
   </head>
 
   <body>
-
-
-  
-  <!-- modal welcome sederhana -->
-  <?php if (isset($_SESSION['welcome'])) : ?>
-
-    <script>
-    setTimeout(function() {
-     Swal.fire({
-
-       title: 'Success!',
-       text: 'Login Berhasil',
-       icon: 'success',
-       timer: '3300',
-       showConfirmButton: true
-
-     });
-
-    },10);
-    window.setTimeout(function() {
-     window.location.replace('admin-pages/');
-    }, 3000);
-   </script>
-
-    <?php endif; 
-    unset($_SESSION["welcome"] );
-    ?>
-  <!-- akhir modal welcome sederhana -->
-
-
-
     <!--*******************
         Preloader start
     ********************-->

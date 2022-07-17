@@ -16,14 +16,35 @@ function regisadmin($data) {
 
   if( mysqli_fetch_assoc($admin) ) {
 
-    echo"username yang anda pilih sudah digunakan!";
+    echo "<script>
+    setTimeout(function () {
+      Swal.fire ({
+        title: 'Ooops!',
+        text: 'Username yang Anda pilih sudah digunakan, silahkan pilih username lain',
+        icon: 'warning',
+        timer: '2000'
+    });
+  },10);
+  </script>
+    ";
+
     return false;
   }
 
   // cek pasword
   if( $password !== $password2) {
 
-    echo"password yang anda masukkan tidak sesuai!";
+    echo "<script>
+          setTimeout(function () {
+            Swal.fire ({
+              title: 'Ooops!',
+              text: 'Password dan konfirmasi password yang Anda masukan tidak sesuai',
+              icon: 'warning',
+              timer: '2000'
+          });
+        },10);
+        </script>
+          ";
     return false;
   }
 
@@ -45,7 +66,17 @@ if( isset($_POST["submit"]) ) {
 
   if( regisadmin($_POST) > 0 ) {
 
-    echo"akun anda berhasil dibuat!";
+    echo "<script>
+    setTimeout(function () {
+      Swal.fire ({
+        title: 'Success!',
+        text: 'Selamat akun Anda berhasil dibuat, silahkan login',
+        icon: 'success',
+        timer: '2000'
+    });
+  },10);
+  </script>
+    ";
   } else {
     echo mysqli_error($conn);
   }
@@ -216,12 +247,9 @@ if( isset($_POST["submit"]) ) {
     <script src="admin-pages/js/gleek.js"></script>
     <script src="admin-pages/js/styleSwitcher.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
-<script>
-  $('.toast').toast('show');
-</script>
+     <!-- sweet alert -->
+     <script src="admin-pages/plugins/sweetalert/js/sweetalert2.all.min.js"></script>
+    <script src="admin-pages/plugins/sweetalert/js/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>
