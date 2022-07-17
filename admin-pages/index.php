@@ -137,11 +137,28 @@ if (!isset($_SESSION["admin"])) {
   <body>
 
 
+  
   <!-- modal welcome sederhana -->
   <?php if (isset($_SESSION['welcome'])) : ?>
+
     <script>
-      alert(' Berhasil Login!');
-    </script>
+    setTimeout(function() {
+     Swal.fire({
+
+       title: 'Success!',
+       text: 'Login Berhasil',
+       icon: 'success',
+       timer: '3300',
+       showConfirmButton: true
+
+     });
+
+    },10);
+    window.setTimeout(function() {
+     window.location.replace('admin-pages/');
+    }, 3000);
+   </script>
+
     <?php endif; 
     unset($_SESSION["welcome"] );
     ?>

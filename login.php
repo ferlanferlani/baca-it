@@ -54,8 +54,25 @@ if (isset($_POST["login"])) {
 }
 
 
+
 ?>
 
+
+<!-- jika password atau username salah dan form kosong -->
+<?php if (isset($error)) {
+                    echo "<script>
+                    setTimeout(function () {
+                      Swal.fire ({
+                        title: 'Ooops!',
+                        text: 'pastikan password dan username Anda terisi dengan benar',
+                        icon: 'warning',
+                        timer: '3200',
+                    });
+                  },10);
+                  </script>
+                    ";
+                  } ?>
+                  <!-- end -->
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -138,6 +155,12 @@ if (isset($_POST["login"])) {
       href="favicon/favicon-128.png"
       sizes="128x128"
     />
+
+
+    <!-- panggil sweet alert -->
+    <link rel="stylesheet" href="admin-pages/plugins/sweetalert2/dist/sweetalert2.min.css">
+    <!-- akhir sweet alert -->
+
     <meta name="application-name" content="&nbsp;" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
@@ -181,17 +204,14 @@ if (isset($_POST["login"])) {
                   <div class="text-center">
                     <img src="admin-pages/logo/bacait text.png" alt="" />
                   </div>
-                  <!-- jika password atau username salah -->
-                  <?php if (isset($error)) : ?>
-                    <i class="text-danger">GAGAL MASUK!</i>
-                  <?php endif; ?>
+
                   <form action="" method="post" class="mt-5 login-input">
                     <div class="form-group">
                       <input
                         type="text"
                         class="form-control"
                         name="username"
-                        placeholder="Username" required
+                        placeholder="Username"
                       />
                     </div>
                     <div class="form-group">
@@ -200,7 +220,6 @@ if (isset($_POST["login"])) {
                         class="form-control"
                         name="password"
                         placeholder="Password"
-                        required
                       />
                     </div>
                    <button type="submit" class="btn login-form__btn submit w-100" name="login" >Login</button>
@@ -222,5 +241,10 @@ if (isset($_POST["login"])) {
     <script src="admin-pages/js/settings.js"></script>
     <script src="admin-pages/js/gleek.js"></script>
     <script src="admin-pages/js/styleSwitcher.js"></script>
+
+    <!-- sweet alert -->
+    <script src="admin-pages/plugins/sweetalert/js/sweetalert2.all.min.js"></script>
+    <script src="admin-pages/plugins/sweetalert/js/jquery-3.6.0.min.js"></script>
+
   </body>
 </html>
