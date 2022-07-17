@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2022 at 09:55 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Generation Time: Jul 17, 2022 at 10:31 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (3, 'ferlan', '$2y$10$exBLllbytzTzMalUAyJ9pucNbTVG05dQjnda3h5YQ9AfbuVFyr8wS'),
 (4, 'ferlan', '$2y$10$wa4YxVbScyLliYdETqWC9On/T1cSE.kyG43371D6Ys7HtdmNhlt.e'),
 (5, '', '$2y$10$gqoFt6XISAZBMbxujS8NJuNfoOKHuhWCAEBfFc7xxPqCT7ujF82ae'),
-(6, 'sfsadf', '$2y$10$aHexM7v8SpoVKlr7cKNgNe8Ulsxh8M.6AwtSMWaklB.CeOMT1GE9W');
+(6, 'sfsadf', '$2y$10$aHexM7v8SpoVKlr7cKNgNe8Ulsxh8M.6AwtSMWaklB.CeOMT1GE9W'),
+(7, 'yayan', '$2y$10$eRCo5uOR.ObmAKLoyWw26eBtDTcZLHdcEvsELZ7hCqOG9bZ5gVpuO');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,8 @@ CREATE TABLE `multi_user` (
 --
 
 INSERT INTO `multi_user` (`id`, `username`, `password`, `level`) VALUES
-(3, 'admin', '$2y$10$meVnSZ5EwZAMMeQKCdZjeOzpQwPgSw4C0bvECCwNAMUNNd5EpqXB2', 'admin');
+(3, 'admin', '$2y$10$meVnSZ5EwZAMMeQKCdZjeOzpQwPgSw4C0bvECCwNAMUNNd5EpqXB2', 'admin'),
+(9, 'yayan', '$2y$10$eRCo5uOR.ObmAKLoyWw26eBtDTcZLHdcEvsELZ7hCqOG9bZ5gVpuO', 'admin');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `ebook`
@@ -145,7 +147,7 @@ ALTER TABLE `ebook`
 -- AUTO_INCREMENT for table `multi_user`
 --
 ALTER TABLE `multi_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
