@@ -492,7 +492,7 @@ http://www.templatemo.com/tm-492-app-starter
               </div>
               <p>1 modul</p>
               <h3 class="text-success">Tanpa daftar</h3>
-              <button class="btn btn-default section-btn">Coba sekarang</button>
+              <a class="btn btn-default section-btn" href="modul/modul-low.html">Coba sekarang</a>
             </div>
           </div>
 
@@ -506,7 +506,7 @@ http://www.templatemo.com/tm-492-app-starter
               </div>
               <p>1 modul</p>
               <h3 class="text-success">Tanpa daftar</h3>
-              <button class="btn btn-default section-btn">Coba sekarang</button>
+              <a class="btn btn-default section-btn" href="modul/modul-medium.html">Coba sekarang</a>
             </div>
           </div>
 
@@ -520,7 +520,7 @@ http://www.templatemo.com/tm-492-app-starter
               </div>
               <p>1 modul</p>
               <h3 class="text-success">Tanpa daftar</h3>
-              <button class="btn btn-default section-btn">Coba sekarang</button>
+              <a class="btn btn-default section-btn" href="modul/modul-hard.html">Coba sekarang</a>
             </div>
           </div>
         </div>
