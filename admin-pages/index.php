@@ -20,7 +20,9 @@ if (!isset($_SESSION["admin"])) {
     $data = mysqli_fetch_assoc($result);
   } 
   // akhir cetak session Login
-
+  
+  // notifikasi
+  $infoupload = query("SELECT * FROM ebook ORDER BY id DESC")
 
  ?>
 
@@ -404,13 +406,14 @@ if (!isset($_SESSION["admin"])) {
               </div>
             </div>
           </div>
-
+          
           <div class="row">
             <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-12">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Aktivitas Upload E-book</h4>
                   <div id="activity">
+                    <?php foreach($infoupload as $info) : ?>
                     <div class="media border-bottom-1 pt-3 pb-3">
                       <img
                         width="35"
@@ -420,11 +423,13 @@ if (!isset($_SESSION["admin"])) {
                       <div class="media-body">
                         <h5>E-book Berhasil Di Upload</h5>
                         <p class="mb-0">
-                          I shared this on my fb wall a few months back,
+                          <?= $info['judul']; ?>
                         </p>
                       </div>
-                      <span class="text-muted">April 24, 2018</span>
+                      <span class="text-muted"><?= $info['tglupload']; ?></span>
                     </div>
+                    <br>
+                    <?php endforeach; ?>
                   </div>
                 </div>
               </div>

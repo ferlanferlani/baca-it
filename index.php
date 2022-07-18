@@ -16,6 +16,25 @@ if (isset($_SESSION["admin"])) {
 //   header("Location: staff/.");
 //   exit;
 // }
+require 'admin-pages/functions.php';
+
+if( isset($_POST['buttonPesan']) ) {
+  if( kirimpesan($_POST) > 0) {
+    echo "
+      <script>
+      alert('Terkirim');
+      document.location.href = 'index.php';
+      </script>";
+  }else {
+    "
+      <script>
+      alert('Gagal terkirim');
+      document.location.href = 'index.php';
+      </script>";
+  }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -610,7 +629,7 @@ http://www.templatemo.com/tm-492-app-starter
               required
             ></textarea>
             <input
-              name="submit"
+              name="buttonPesan"
               type="submit"
               class="form-control"
               id="submit"

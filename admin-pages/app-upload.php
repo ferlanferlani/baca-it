@@ -402,6 +402,7 @@ if (!isset($_SESSION["admin"])) {
                             <textarea class="form-control" id="deskripsi" rows="3" placeholder="Deskripsi E-book..." name="deskripsi"></textarea>
                           </div>
                         </div>
+                        <input type="hidden" value="<?= date('l y m') ?>" name="tglupload">
                         <div class="input-grup">
                           <button type="submit" class="btn btn-primary" name="upload">
                             Submit
