@@ -11,6 +11,7 @@ if (!isset($_SESSION["admin"])) {
 
   $totalEbook = count(query("SELECT * FROM ebook"));
   $totalAdmin = count(query("SELECT * FROM admin"));
+  $totalPesan = count(query("SELECT * FROM chat_users"));
 
   // <!-- cetak session login -->
   if ($_SESSION['admin']) {
@@ -34,6 +35,35 @@ if (!isset($_SESSION["admin"])) {
     $data = mysqli_fetch_assoc($result);
   } 
   // akhir cetak session Login
+
+
+  // ambil data dri dtabase chat_user
+  $chat = mysqli_query($conn, "SELECT * FROM chat_users");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  ?>
 
@@ -228,8 +258,8 @@ if (!isset($_SESSION["admin"])) {
             <ul class="clearfix">
               <li class="icons dropdown">
                 <a href="javascript:void(0)" data-toggle="dropdown">
-                  <i class="mdi mdi-message-outline"></i>
-                  <span class="badge badge-pill gradient-2">3</span>
+                  <i class="mdi mdi-email-outline"></i>
+                  <span class="badge badge-pill gradient-2"><?= $totalPesan;?></span>
                 </a>
                 <div
                   class="drop-down animated fadeIn dropdown-menu dropdown-notfication"
@@ -237,41 +267,34 @@ if (!isset($_SESSION["admin"])) {
                   <div
                     class="dropdown-content-heading d-flex justify-content-between"
                   >
-                    <span class="">2 New Notifications</span>
-                    <a href="javascript:void()" class="d-inline-block">
-                      <span class="badge badge-pill gradient-2">5</span>
-                    </a>
+                    <span class="">Notifications</span>
                   </div>
+
+                  
+                  <!-- foreach data -->
+                  <?php foreach($chat as $row) : ?>
                   <div class="dropdown-content-body">
                     <ul>
                       <li>
-                        <a href="javascript:void()">
                           <span class="mr-3 avatar-icon bg-success-lighten-2"
-                            ><i class="icon-present"></i
+                            ><i class="mdi mdi-email-outline"></i
                           ></span>
                           <div class="notification-content">
                             <h6 class="notification-heading">
-                              Events near you
+                              <?= $row['email']; ?>
                             </h6>
                             <span class="notification-text"
-                              >Within next 5 days</span
+                              ><?= $row['pesan']; ?></span
                             >
                           </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void()">
-                          <span class="mr-3 avatar-icon bg-danger-lighten-2"
-                            ><i class="icon-present"></i
-                          ></span>
-                          <div class="notification-content">
-                            <h6 class="notification-heading">Event Started</h6>
-                            <span class="notification-text">One hour ago</span>
-                          </div>
-                        </a>
                       </li>
                     </ul>
                   </div>
+                  <?php endforeach; ?>
+                  <a href=""><div class="btn btn-danger btn-sm mt-4 m-2">Detail</div></a>
+                  <!-- end foreach -->
+
+
                 </div>
               </li>
               <li class="icons dropdown">

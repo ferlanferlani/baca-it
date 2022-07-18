@@ -22,7 +22,7 @@ function regisadmin($data) {
         title: 'Ooops!',
         text: 'Username yang Anda pilih sudah digunakan, silahkan pilih username lain',
         icon: 'warning',
-        timer: '2000'
+        timer: '3000'
     });
   },10);
   </script>
@@ -40,7 +40,7 @@ function regisadmin($data) {
               title: 'Ooops!',
               text: 'Password dan konfirmasi password yang Anda masukan tidak sesuai',
               icon: 'warning',
-              timer: '2000'
+              timer: '3000'
           });
         },10);
         </script>
@@ -72,7 +72,7 @@ if( isset($_POST["submit"]) ) {
         title: 'Success!',
         text: 'Selamat akun Anda berhasil dibuat, silahkan login',
         icon: 'success',
-        timer: '2000'
+        timer: '3000'
     });
   },10);
   </script>
