@@ -265,7 +265,7 @@ $ebook = query("SELECT * FROM ebook");
                       </li>
                       <hr class="my-2" />
                       <li>
-                        <a href="page-login"
+                        <a href="logout"
                           ><i class="icon-logout"></i> <span>Logout</span></a
                         >
                       </li>

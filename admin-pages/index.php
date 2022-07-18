@@ -217,7 +217,7 @@ if (!isset($_SESSION["admin"])) {
             <ul class="clearfix">
               <li class="icons dropdown">
                 <a href="javascript:void(0)" data-toggle="dropdown">
-                  <i class="mdi mdi-bell-outline"></i>
+                  <i class="mdi mdi-message-outline"></i>
                   <span class="badge badge-pill gradient-2">3</span>
                 </a>
                 <div

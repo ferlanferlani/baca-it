@@ -21,16 +21,28 @@ require 'admin-pages/functions.php';
 if( isset($_POST['buttonPesan']) ) {
   if( kirimpesan($_POST) > 0) {
     echo "
-      <script>
-      alert('Terkirim');
-      document.location.href = 'index.php';
-      </script>";
+    <script>
+    setTimeout(function () {
+      Swal.fire ({
+        title: 'Success!',
+        text: 'Pesan Anda berhasil terkirim, Terimakasih',
+        icon: 'success',
+        timer: '3500'
+    });
+  },10);
+  </script>";
   }else {
     "
-      <script>
-      alert('Gagal terkirim');
-      document.location.href = 'index.php';
-      </script>";
+    <script>
+    setTimeout(function () {
+      Swal.fire ({
+        title: 'Ooops!',
+        text: 'Mohon maaf, pesan Anda gagal terkirim!',
+        icon: 'error',
+        timer: '3500'
+    });
+  },10);
+  </script>";
   }
 }
 
@@ -654,5 +666,8 @@ http://www.templatemo.com/tm-492-app-starter
     <script src="js/smoothscroll.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
+     <!-- sweet alert -->
+     <script src="admin-pages/plugins/sweetalert/js/sweetalert2.all.min.js"></script>
+    <script src="admin-pages/plugins/sweetalert/js/jquery-3.6.0.min.js"></script>
   </body>
 </html>
