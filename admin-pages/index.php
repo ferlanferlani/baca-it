@@ -22,7 +22,18 @@ if (!isset($_SESSION["admin"])) {
   // akhir cetak session Login
   
   // notifikasi
-  $infoupload = query("SELECT * FROM ebook ORDER BY id DESC")
+  $infoupload = query("SELECT * FROM ebook ORDER BY id DESC");
+
+
+  // data login user
+  // <!-- cetak session login -->
+  if ($_SESSION['admin']) {
+    $login = $_SESSION['admin'];
+
+    $result = mysqli_query($conn, "SELECT * FROM multi_user WHERE id = '$login'");
+    $data = mysqli_fetch_assoc($result);
+  } 
+  // akhir cetak session Login
 
  ?>
 
@@ -412,6 +423,14 @@ if (!isset($_SESSION["admin"])) {
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Aktivitas Upload E-book</h4>
+                  <!-- cek jika tidak ada data ebook di upload -->
+                  <?php
+                  if($totalEbook == 0) {
+                    echo "<h1 class='text-center'>Ebook Belum Di Upload</h1>";
+                  }
+
+                  ?>
+                  <!-- end -->
                   <div id="activity">
                     <?php foreach($infoupload as $info) : ?>
                     <div class="media border-bottom-1 pt-3 pb-3">
@@ -421,9 +440,12 @@ if (!isset($_SESSION["admin"])) {
                         class="mr-3 rounded-circle"
                       />
                       <div class="media-body">
-                        <h5>E-book Berhasil Di Upload</h5>
+                        <h5><?= $data['username']; ?></h5>
                         <p class="mb-0">
-                          <?= $info['judul']; ?>
+                          <?= '<span class="text-danger">Judul : </span>'. $info['judul']. 
+                              '<br>'.
+                              '<span class="text-danger">Deskripsi : </span>'. $info['deskripsi']
+                               ?>
                         </p>
                       </div>
                       <span class="text-muted"><?= $info['tglupload']; ?></span>

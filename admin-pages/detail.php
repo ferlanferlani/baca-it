@@ -20,7 +20,7 @@ $ebook = query("SELECT * FROM ebook WHERE id = $id")[0];
             <img src="cover/<?= $ebook['cover'] ?>" alt="" width="200px">
         </li>
         <li>Judul : <?= $ebook['judul']; ?></li>
-        <li>Deskripsi : <br> <?= $ebook['deskripsi'];?></li>
+        <li>Deskripsi : <?= $ebook['deskripsi'];?></li>
         <li>Tanggal upload : <?= $ebook['tglupload']; ?></li>
     </ul>
     <br>
