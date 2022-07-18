@@ -191,7 +191,7 @@ http://www.templatemo.com/tm-492-app-starter
             <span class="icon icon-bar"></span>
             <span class="icon icon-bar"></span>
           </button>
-          <a href="index.html" class="navbar-brand"><span>Baca</span> IT</a>
+          <a href="." class="navbar-brand"><span>Baca</span> IT</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -658,6 +658,10 @@ http://www.templatemo.com/tm-492-app-starter
 
     <!-- SCRIPTS -->
 
+    <!-- sweet alert -->
+    <script src="admin-pages/plugins/sweetalert/js/sweetalert2.all.min.js"></script>
+    <script src="admin-pages/plugins/sweetalert/js/jquery-3.6.0.min.js"></script>
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
@@ -666,8 +670,6 @@ http://www.templatemo.com/tm-492-app-starter
     <script src="js/smoothscroll.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
-     <!-- sweet alert -->
-     <script src="admin-pages/plugins/sweetalert/js/sweetalert2.all.min.js"></script>
-    <script src="admin-pages/plugins/sweetalert/js/jquery-3.6.0.min.js"></script>
+     
   </body>
 </html>
