@@ -34,6 +34,7 @@ function tambah($data) {
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $pdf = uploadpdf();
     $img = uploadcover();
+    $tglupload = htmlspecialchars($data["tglupload"]);
     if(!$pdf) {
         return false;
     }
@@ -42,7 +43,7 @@ function tambah($data) {
         return false;
     }
 
-$query = "INSERT INTO ebook VALUES ('', '$judul', '$deskripsi', '$pdf', '$img')";
+$query = "INSERT INTO ebook VALUES ('', '$judul', '$deskripsi', '$pdf', '$img', '$tglupload')";
 
 mysqli_query($conn, $query);
 
@@ -179,6 +180,20 @@ function uploadcover() {
     // }
 
 
+function kirimpesan($data) {
+        global $conn;
+            $nama = htmlspecialchars($data['name']);
+            $email = htmlspecialchars($data['email']);
+            $pesan = htmlspecialchars($data['message']);
 
+
+        $query = "INSERT INTO chat_users VALUES ('', '$nama', '$email', '$pesan')";
+
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+
+
+}
 
 ?>
