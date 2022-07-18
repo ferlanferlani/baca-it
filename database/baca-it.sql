@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2022 at 10:31 AM
+-- Generation Time: Jul 18, 2022 at 02:18 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,9 +41,27 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', '$2y$10$meVnSZ5EwZAMMeQKCdZjeOzpQwPgSw4C0bvECCwNAMUNNd5EpqXB2'),
 (3, 'ferlan', '$2y$10$exBLllbytzTzMalUAyJ9pucNbTVG05dQjnda3h5YQ9AfbuVFyr8wS'),
 (4, 'ferlan', '$2y$10$wa4YxVbScyLliYdETqWC9On/T1cSE.kyG43371D6Ys7HtdmNhlt.e'),
-(5, '', '$2y$10$gqoFt6XISAZBMbxujS8NJuNfoOKHuhWCAEBfFc7xxPqCT7ujF82ae'),
-(6, 'sfsadf', '$2y$10$aHexM7v8SpoVKlr7cKNgNe8Ulsxh8M.6AwtSMWaklB.CeOMT1GE9W'),
 (7, 'yayan', '$2y$10$eRCo5uOR.ObmAKLoyWw26eBtDTcZLHdcEvsELZ7hCqOG9bZ5gVpuO');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat_users`
+--
+
+CREATE TABLE `chat_users` (
+  `id` int(50) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `pesan` varchar(999) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chat_users`
+--
+
+INSERT INTO `chat_users` (`id`, `nama`, `email`, `pesan`) VALUES
+(2, 'Yayan', 'yayanfr3@gmail.com', 'halo admin');
 
 -- --------------------------------------------------------
 
@@ -56,15 +74,17 @@ CREATE TABLE `ebook` (
   `judul` varchar(99) NOT NULL,
   `deskripsi` varchar(999) NOT NULL,
   `pdf` varchar(999) NOT NULL,
-  `cover` varchar(200) NOT NULL
+  `cover` varchar(200) NOT NULL,
+  `tglupload` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ebook`
 --
 
-INSERT INTO `ebook` (`id`, `judul`, `deskripsi`, `pdf`, `cover`) VALUES
-(3, 'Mengenal javascript', 'ebook belajar bahasa pemerogramman javascript', 'Mengenaljavascript.pdf', 'js.png');
+INSERT INTO `ebook` (`id`, `judul`, `deskripsi`, `pdf`, `cover`, `tglupload`) VALUES
+(16, 'Mengenal javascript', 'Pembelajaran javascript pemula', '62d4a24c97358.pdf', '62d4a24c97a2e.png', 'Monday 22 07'),
+(17, 'coba', 'coba doang', '62d4a66a38e22.pdf', '62d4a66a391ea.png', 'Monday 22 07');
 
 -- --------------------------------------------------------
 
@@ -110,6 +130,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `chat_users`
+--
+ALTER TABLE `chat_users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `ebook`
 --
 ALTER TABLE `ebook`
@@ -138,10 +164,16 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `chat_users`
+--
+ALTER TABLE `chat_users`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `ebook`
 --
 ALTER TABLE `ebook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `multi_user`
